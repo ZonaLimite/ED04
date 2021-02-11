@@ -6,7 +6,8 @@
 package cuentas;
 
 /**
- * Trea para ED04 Clase Main
+ * Tarea para ED04 Clase Main
+ * Test de ejemplos de Refactorizacion
  * @author F.J. BOGA
  */
 public class Main {
