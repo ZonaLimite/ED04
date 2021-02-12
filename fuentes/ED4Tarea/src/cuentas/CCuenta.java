@@ -7,7 +7,11 @@ package cuentas;
 
 /**
  *  Tarea para ED04 Clase CCuenta
+ *  Una Clase interface para el control de saldo, con metodos accesibles
+ *  para ingresar , recuperar y consultar el saldo disponible.
  * @author F.J. BOGA
+ * @version 1.0
+ * @since  1.5
  */
 public class CCuenta {
 
@@ -73,10 +77,19 @@ public class CCuenta {
     private double saldo;
     private double tipoInterés;
 
+    /**
+     * Constructor por defecto
+     */
     public CCuenta()
     {
     }
-
+    /**
+     * Constructor con parametros personalizable
+     * @param nom El nombre del usuario
+     * @param cue El numero de cuenta
+     * @param sal El saldo disponible
+     * @param tipo Una defincion de tipo posible
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -84,11 +97,20 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * Un metodo para consultar rapidamente el saldo del usuario
+     * @return el saldo disponible. Su valor double garantiza cantidades elevadas
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+     * Un metodo que nos permite hacer un ingreso en nuestra cuenta.
+     * @param cantidad La cantidad a reponer.
+     * @throws Exception Si la cantidad introducida es menor que 0
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -96,6 +118,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Un metodo que nos permite retirar efectivo dle saldo disponible. 
+     * @param cantidad La cantidad a retirar.
+     * @throws Exception Si la cantidad expresada es menor que 0 o no hay saldo.
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
